@@ -7,21 +7,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Landing Page</title>
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <time id="time"></time>
-    <h1>
-        <span id="greeting"></span>
-    </h1>
+    <div id="content">
+        <time id="time"></time>
+        <h1>
+            <span id="greeting"></span>
+            <span id="voiceFeedback"></span>
+            <button id="getCommand" class="btn btn-dark">Assist</button>
+        </h1>
+
+    </div>
     <div class="row">
-        <div class="col-sm-2 col-md-3">
-            <a href="" class="btn btn-dark">Stack Overflow</a>
-            <a href="" class="btn btn-dark">Stack Overflow</a>
-            <a href="" class="btn btn-dark">Stack Overflow</a>
+        <div class="buttons">
+            <a href="https://stackoverflow.com/" class="btn btn-dark">Stack Overflow</a>
+            <a href="https://www.w3schools.com/" class="btn btn-dark">W3Schools</a>
+            <a href="https://developer.mozilla.org/pt-PT/" class="btn btn-dark">MDN Web Docs</a>
+
         </div>
     </div>
 

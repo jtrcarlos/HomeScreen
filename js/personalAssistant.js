@@ -9,10 +9,14 @@ window.onerror = function (error) {
 }
 //#endregion
 
+const greet = ["Im good", "Im a robot", "Thanks"];
+
 //#region 
-const getCommand = document.querySelector('.getCommand');
-const voiceFeedback = document.querySelector('.voiceFeedback');
+const getCommand = document.getElementById('getCommand');
+const voiceFeedback = document.getElementById('voiceFeedback');
 //#endregion
+
+
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -25,6 +29,37 @@ recognition.onstart = () => {
 }
 
 recognition.onresult = (event) => {
+    console.log(event);
     const current = event.resultIndex;
+
+    const transcript = event.results[current][0].transcript;
+    voiceFeedback.textContent = transcript;
+    readMessage(transcript);
+}
+
+getCommand.addEventListener('click', () => {
+    recognition.start();
+});
+
+/**
+ * Reads mic input and reads outloud response
+ * @param {*} message 
+ */
+function readMessage(message) {
+    const speech = new SpeechSynthesisUtterance();
+
+    speech.text = "I didn't understand, do it again";
+
+    if (message.includes('how are you')) {
+        const finalSpeech = greet[Math.random() * greet.length()];
+        speech.text = finalSpeech;
+    }
+
+    speech.lang = "en-US";
+    speech.volume = 1;
+    speech.rate = 1;
+    speech.pitch = 1;
+
+    window.speechSynthesis.speak(speech);
 }
 
