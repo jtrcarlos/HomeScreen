@@ -9,7 +9,7 @@ window.onerror = function (error) {
 }
 //#endregion
 
-const greet = ["Im good", "Im a robot", "Thanks"];
+const greet = ["Im good", " What’s up?", "Im ok, thanks"];
 
 //#region 
 const getCommand = document.getElementById('getCommand');
@@ -51,7 +51,7 @@ function readMessage(message) {
     speech.text = "I didn't understand, do it again";
 
     if (message.includes('how are you')) {
-        const finalSpeech = greet[Math.random() * greet.length()];
+        const finalSpeech = greet[Math.floor(Math.random() * greet.length)];
         speech.text = finalSpeech;
     }
 
