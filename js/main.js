@@ -33,7 +33,8 @@ function addZeros(num) {
 function backgroundImg() {
     let today = new Date(),
         hour = today.getHours();
-    const image = document.body.style.backgroundImage = "url(https://picsum.photos/1920/1080)";
+    // const image = document.body.style.backgroundImage = "url(https://picsum.photos/1920/1080)";
+    const image = document.body.style.background = "black";
 
     if (hour < 12) {
         // document.body.style.backgroundImage = "url(https://picsum.photos/1920/1080)";
@@ -70,6 +71,11 @@ function imgTextConvert() {
         .recognize(imgTextInput.value)
         .progress((p) => {
             console.log('progress', p);
+            var current_progress = p.progress * 100;
+            $(".progress-bar")
+                .css("width", current_progress + "%")
+                .attr("aria-valuenow", current_progress)
+                .text(current_progress + "% Complete");
         })
         .then(({ text }) => {
             console.log(text);

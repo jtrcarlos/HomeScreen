@@ -38,7 +38,7 @@
 
     <div class="row">
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="introduzir url (https)"
+            <input id="imgTextInput" type="text" class="form-control" placeholder="introduzir url (https)"
                 aria-label="introduzir url (https)" aria-describedby="button-addon2">
             <div class="input-group-append">
                 <button class="btn btn-outline-secondary" type="button" id="button-addon2"
@@ -47,14 +47,9 @@
         </div>
     </div>
 
-    <div class="row">
-        <input type="text" id="imgTextInput" placeholder="introduzir url (https)">
-        <button class="btn btn-dark" onclick="imgTextConvert()">Convert to Text</button>
-    </div>
     <br>
     <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
-            aria-valuemax="100">25%</div>
+        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
     <br>
     <div class="row">
