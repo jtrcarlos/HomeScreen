@@ -34,6 +34,32 @@
 
         </div>
     </div>
+    <br>
+
+    <div class="row">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="introduzir url (https)"
+                aria-label="introduzir url (https)" aria-describedby="button-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                    onclick="imgTextConvert()">Convert to Text</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <input type="text" id="imgTextInput" placeholder="introduzir url (https)">
+        <button class="btn btn-dark" onclick="imgTextConvert()">Convert to Text</button>
+    </div>
+    <br>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+            aria-valuemax="100">25%</div>
+    </div>
+    <br>
+    <div class="row">
+        <div id="imgTextOutput"></div>
+    </div>
 
 
 
@@ -47,6 +73,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src='https://unpkg.com/tesseract.js@v2.0.0-alpha.13/dist/tesseract.min.js'></script>
     <script src="js/main.js"></script>
     <script src="js/personalAssistant.js"></script>
 </body>

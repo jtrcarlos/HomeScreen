@@ -52,3 +52,29 @@ function backgroundImg() {
 
 showClock();
 backgroundImg();
+
+/////// Image to text ///////
+
+const { TesseractWorker } = Tesseract;
+const worker = new TesseractWorker();
+
+const imgTextOutput = document.getElementById('imgTextOutput');
+const imgTextInput = document.getElementById('imgTextInput');
+
+
+/**
+ * Converts an image from a external url to text
+ */
+function imgTextConvert() {
+    worker
+        .recognize(imgTextInput.value)
+        .progress((p) => {
+            console.log('progress', p);
+        })
+        .then(({ text }) => {
+            console.log(text);
+            worker.terminate();
+            imgTextOutput.innerText = text;
+        });
+}
+
